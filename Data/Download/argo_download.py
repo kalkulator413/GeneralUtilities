@@ -14,7 +14,7 @@ def download():
 	# untar nested tars
 	dac_subfolder = os.path.join(argo_folder, "202305-ArgoData/dac")
 	for f in os.listdir(dac_subfolder):
-		if '.tar.gz' not in str(f):
+		if 'core.tar.gz' not in str(f):
 			continue
 		complete_path = os.path.join(dac_subfolder, f)
 		subprocess.call(['tar', '-xvzf', complete_path, '-C', argo_folder])
@@ -23,3 +23,4 @@ def download():
 	to_del = os.path.join(argo_folder, '202305-ArgoData')
 	subprocess.call('rm', '-rf', to_del)
 	subprocess.call(["rm", tarred_file])
+
