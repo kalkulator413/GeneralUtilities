@@ -1,9 +1,10 @@
 from GeneralUtilities.Data.Filepath.instance import get_data_folder
 import os
 import subprocess
-data_folder = os.path.join(get_data_folder(),'Raw/Argo/TS_profiles')
+data_folder = os.path.join(get_data_folder(),'Raw/Argo/temp-sal')
 
 def download():
+    subprocess.call(['mkdir', data_folder])
     url = 'https://sio-argo.ucsd.edu/pub/www-argo/RG/RG_ArgoClim_Temperature_2019.nc.gz'
     subprocess.call(["wget", url, "-P" , data_folder])
     url = 'https://sio-argo.ucsd.edu/pub/www-argo/RG/RG_ArgoClim_Salinity_2019.nc.gz'
