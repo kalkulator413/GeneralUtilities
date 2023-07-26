@@ -25,7 +25,7 @@ def download():
             if month < 10:
                 name = f'RG_ArgoClim_{year}0{month}_2019.nc'
             else:
-                url = f'RG_ArgoClim_{year}{month}_2019.nc'
+                name = f'RG_ArgoClim_{year}{month}_2019.nc'
             subprocess.call(['wget', 'https://sio-argo.ucsd.edu/pub/www-argo/RG/' + name + '.gz', '-P', data_folder])
             subprocess.call(['gzip', '-d', os.path.join(data_folder, name)])
     
